@@ -24,9 +24,12 @@ This script updates/create script in the `/etc/nginx-sp` that requires root acce
 - List all the `ssl` config files  
   `ls *ssl*`  
 - Delete the `<appname>.ssl.conf` that is causing problem
+- Delete the `/etc/letsencrypt` folder with  
+  ``cd /etc``  
+  ``rm -r letsencrypt/``
 
 Restart nginx
-`sudo service nginx-sp restart`
+`sudo service nginx-sp restart` or `systemctl restart nginx`
 
 ## Schedule auto renewal
 Add the following to your crontab (`crontab -e`)
